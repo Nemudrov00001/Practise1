@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Manrope">
+
+  <title>Frontend Mentor | Article preview component</title>
+
+</head>
+<body>
+  <img src="images/снимок экрана.jpg" class="background" />
+  <div class="Fon">
+  <div class="preview">
+    <div class="left-preview">
+    </div>
+
+    <div class="right-preview">
+      <div>
+        <h2>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
+        <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+      </div>
+
+      <div class="author">
+        <div class="avatar">
+          <img src="images/alexander.jpg" id="image" style = "zoom: 1"/>
+        </div>
+        <div class="name">
+          <h4>Alexander Nemudrov</h4>
+          <p>29 Jun 2020</p>
+        </div>
+
+        <div class="popup" onclick="myFunction()">
+          <img class="share-icon" src="images/icon-share.svg">
+          <span class="popuptext" id="myPopup">
+            <div><p>SHARE</p></div>
+            <div>
+              <a href="https://vk.com/yourlover01"><img src="images/icons8-vk-в-круге.svg"></a>
+              <a href="https://www.instagram.com/prost0_alexx/?hl=ru"><img src="images/icons8-instagram.svg"></a>
+              <a href="https://t.me/joinchat/BL6bt73uUI9kMzAy"><img src="images/icons8-телеграмма-app.svg"></a>
+            </div>
+          </span>
+        </div>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://nemudrov00001.github.io/Summary/">Alexander Nemudrov</a>.
+    <a href="https://zhanssayak.github.io/Zhansaya1/">Zhansaya Kulbaeva</a>
+  </div>
+
+  <script>
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+
+     window.onload = function(){
+            var image = document.getElementById('image');
+            image.onclick = function(event){
+                event = event || window.event;
+                if (event.shiftKey) {
+                    this.style.zoom = +this.style.zoom / 2;
+                } else if (!event.ctrlKey) {
+                    this.style.zoom = +this.style.zoom * 2;
+                } 
+            }
+        };
+  </script>
+</body>
+
+</html>
